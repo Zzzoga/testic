@@ -1,0 +1,505 @@
+/* GENERAL STYLES */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+	width: 5px;
+	height: 10px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+	background: #8880D0;
+	border-radius: 5px;
+}
+  
+*::-webkit-scrollbar-track {
+	background-color: #202020;
+	border: none;
+}
+
+@keyframes teamListAnimation {
+	0% {
+		transform: translateX(0%);
+	}
+	50% {
+		transform: translateX(-65%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@keyframes teamItemAnimationTop {
+	0% {
+		transform: translateY(125px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(125px);
+	}
+}
+
+@keyframes teamItemAnimationBottom {
+	0% {
+		transform: translateY(-125px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(-125px);
+	}
+}
+
+@keyframes rotatePreloaderIcon {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes changeProgressbarWidth {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+body {
+	background: #202020;
+	color: rgba(255, 255, 255, 0.83);
+	font-family: 'Manrope', sans-serif;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 127.6%;
+	overflow-x: hidden;
+}
+
+span.color {
+    color: #8880D0;
+}
+
+/* MAIN STYLES */
+
+header.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 90px 0 0;
+}
+
+header.header .section__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+a.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+h3.logo__text {
+    color: #FFF;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 22px;
+}
+
+nav.header__nav {
+    display: flex;
+    align-items: center;
+}
+
+a.nav__link {
+    color: rgba(255, 255, 255, 0.83);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 120.1%;
+    text-decoration: none;
+    position: relative;
+    transition: all .5s ease;
+}
+
+a.nav__link:last-child {
+    margin-left: 85px;
+}
+
+a.nav__link:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.83);
+    transition: width 0.5s;
+}
+
+a.nav__link:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.83);
+    transition: width 0.5s;
+}
+
+section.top__screen {
+    height: 100vh;
+    background: url(../img/top__screen.jpg) no-repeat center center;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.section__wrapper {
+    width: 100%;
+    padding: 0 100px;
+}
+
+h1.title {
+    color: #FFF;
+    font-size: 346px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 86.5px;
+    position: relative;
+}
+
+h1.title::after {
+    content: '—';
+    position: absolute;
+}
+
+span.subtitle {
+    max-width: 330px;
+    display: flex;
+}
+
+h2.section__title {
+    color: #FFF;
+    font-size: 138px;
+    font-weight: 400;
+    line-height: 78.6%;
+    letter-spacing: 20.08px;
+}
+
+section.products {
+    padding: 131px 0 109px 0;
+}
+
+section.products span.subtitle, section.experience span.subtitle {
+    margin-top: 74px;
+}
+
+section.products__slider {
+    background: #1A1A1A;
+    padding: 91px 0 23px;
+    flex-direction: column;
+}
+
+.slider__info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+h3.slider__title {
+    color: #FFF;
+    font-size: 59px;
+    font-weight: 400;
+    line-height: 102.1%;
+    letter-spacing: 9.44px;
+    max-width: 420px;
+}
+
+.slider__text {
+    display: flex;
+    margin-top: 36px;
+}
+
+.slider__text p:nth-child(1) {
+    margin-right: 138px;
+    max-width: 237px;
+}
+
+.slider__arrows {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.arrow.next {
+    margin-left: 50px;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.arrow svg path {
+    transition: all .5s ease;
+}
+
+.arrow:hover > svg path {
+    stroke: #8880D0;
+}
+
+.slider__container {
+    margin-top: 66px;
+    width: 100%;
+}
+
+.product__item {
+    max-width: 498px;
+    height: 281px;
+}
+
+section.experience {
+    padding: 133px 0;
+}
+
+.experience__list {
+    margin-top: 92px;
+}
+
+.experience__item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 21px;
+    border-top: 1px solid rgba(255, 255, 255, 0.34);
+    color: #FFF;
+    font-size: 23px;
+    line-height: 120.1%;
+    margin-top: 90px;
+}
+
+.item__count {
+    font-weight: 600;
+}
+
+.item__value {
+    font-weight: 400;
+    max-width: 723px;
+}
+
+.experience__item:first-child {
+    margin: 0;
+}
+
+section.offer {
+    padding: 128px 0 109px 0;
+    background: url(../img/offer__bg.svg) no-repeat center 40%;
+    background-color: #191919;
+    background-size: 100%;
+}
+
+section.offer h2.section__title {
+    line-height: 85%;
+}
+
+.section__text {
+    margin-top: 69px;
+    display: flex;
+}
+
+.section__text p:nth-child(1) {
+    max-width: 365px;
+    margin-right: 111px;
+}
+
+.section__text p:nth-child(2) {
+    max-width: 295px;
+}
+
+.slider__text:nth-child(1) {
+    max-width: 237px;
+}
+
+.slider__text p:nth-child(2) {
+    max-width: 299px;
+}
+
+h1.title::after {
+    content: '—';
+    position: absolute;
+}
+
+section.team {
+    padding: 131px 0 139px 0;
+    flex-direction: column;
+}
+
+.team__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 73px;
+}
+
+.team__list__inner {
+    display: flex;
+	animation: teamListAnimation 400s ease infinite;
+}
+
+.team__item {
+    display: flex;
+    overflow: hidden;
+    width: 280px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 570px;
+    margin-right: 25px;
+	transition: all .5s ease;
+}
+
+.team__item:nth-child(2n) {
+    margin-top: 125px;
+	animation: teamItemAnimationBottom 20s ease infinite;
+}
+
+.team__item:nth-child(2n-1) {
+	animation: teamItemAnimationTop 20s ease infinite;
+}
+
+.team__item img {
+    width: 101%;
+}
+
+section.map .section__wrapper {
+    padding: 0;
+}
+
+footer.footer {
+    padding: 76px 0 78px 0;
+}
+
+footer.footer .section__wrapper {
+    display: flex;
+}
+
+h3.footer__item__title {
+    color: rgba(255, 255, 255, 0.83);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 120.1%; /* 20.417px */
+    margin-bottom: 21px;
+}
+
+span.footer__item__value {
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 148.6%; /* 22.29px */
+}
+
+.footer__item {
+    margin-right: 172px;
+}
+
+.footer__item:last-child {
+    margin: 0;
+}
+
+a.footer__item__value {
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 148.6%;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+
+a.footer__item__value:hover {
+    color: #8980d1;
+}
+
+/* PRELOADER */
+
+.preloader {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 99;
+    background: #202020;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.progressbar {
+    width: 204px;
+    height: 4px;
+    position: relative;
+    margin-right: 34px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.progress__line {
+    width: 0%;
+    height: 4px;
+    background: #8880D0;
+    position: absolute;
+    transition: all .5s ease;
+}
+
+.progress__line.animate {
+	animation: changeProgressbarWidth 2s ease infinite;
+}
+
+.preloader__progress {
+    display: flex;
+    position: absolute;
+    bottom: 160px;
+    align-items: center;
+}
+
+.preloader__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress__wrapper {
+    background: #FFF;
+    width: 100%;
+    height: 4px;
+}
+
+.preloader__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0deg);
+    transition: all .5s ease;
+}
+
+.preloader__icon.animate {
+	animation: rotatePreloaderIcon 10s ease infinite;
+}
